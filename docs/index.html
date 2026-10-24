@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#7856a5">
+<title>お気にと推しの予定 | ダウンロード</title>
+<style>
+*{box-sizing:border-box}
+body{
+ margin:0;
+ background:#f8f5fc;
+ color:#292331;
+ font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+}
+header{
+ background:linear-gradient(140deg,#e9def8,#fbf8ff);
+ text-align:center;
+ padding:52px 20px 42px;
+}
+.logo{
+ width:76px;height:76px;
+ margin:auto;
+ border-radius:20px;
+ background:#7856a5;
+ color:white;
+ display:grid;
+ place-items:center;
+ font-size:40px;
+}
+h1{font-size:27px;margin:18px 0 10px}
+.lead{color:#645a70;line-height:1.8}
+main{max-width:900px;margin:32px auto;padding:0 20px}
+.cards{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+.card{
+ background:white;
+ border:1px solid #e4dced;
+ border-radius:20px;
+ padding:30px 20px;
+ text-align:center;
+ box-shadow:0 5px 18px #5e4c7010;
+}
+.card h2{margin:0 0 8px}
+.version{color:#73667e;font-size:14px}
+.qr{
+ display:block;
+ width:180px;
+ height:180px;
+ margin:22px auto;
+ padding:8px;
+ background:white;
+ border:1px solid #eee6f4;
+ border-radius:12px;
+}
+.btn{
+ display:block;
+ max-width:280px;
+ margin:auto;
+ padding:15px 12px;
+ border-radius:12px;
+ background:#7856a5;
+ color:#fff;
+ font-weight:700;
+ text-decoration:none;
+}
+.info{font-size:13px;color:#756a80;line-height:1.8}
+.notice{
+ background:#eee8f6;
+ padding:20px;
+ margin:28px 0;
+ border-radius:16px;
+ font-size:14px;
+ line-height:1.9;
+}
+footer{
+ text-align:center;
+ padding:10px 20px 40px;
+ font-size:13px;
+ color:#756b7b;
+}
+@media(max-width:640px){
+ .cards{grid-template-columns:1fr}
+ h1{font-size:24px}
+}
+</style>
+</head>
+<body>
+
+<header>
+<div class="logo" aria-hidden="true">★</div>
+<h1>お気にと推しの予定</h1>
+<p class="lead">お気に入りの出演者と推しの予定を<br>
+見やすく整理できるスケジュールアプリ</p>
+</header>
+
+<main>
+<section class="cards">
+
+<article class="card">
+<h2>Android版</h2>
+<div class="version">v1.0.9</div>
+<a id="android-qr-link" href="#" aria-label="Android APKをダウンロード">
+<img id="android-qr" class="qr" alt="Android APKダウンロード用QRコード">
+</a>
+<a class="btn" id="android-button" href="#">APKをダウンロード</a>
+<p class="info">
+Google Play以外からの配布です。<br>
+インストール時に提供元の許可が必要な場合があります。
+</p>
+</article>
+
+<article class="card">
+<h2>iPhone版</h2>
+<div class="version">App Store公開版</div>
+<a id="ios-qr-link" href="#" aria-label="App Storeを開く">
+<img id="ios-qr" class="qr" alt="App Store用QRコード">
+</a>
+<a class="btn" id="ios-button" href="#">App Storeで入手</a>
+<p class="info">
+App Storeで公開されているバージョンを<br>
+インストールできます。
+</p>
+</article>
+
+</section>
+
+<section class="notice">
+<strong>ご利用にあたって</strong><br>
+出演情報は変更される場合があります。
+実際の公演日程は各劇場等の公式案内もご確認ください。<br>
+Android版のAPKは、このページで案内するGitHub Releasesから配布します。
+</section>
+
+</main>
+
+<footer>お気にと推しの予定</footer>
+
+<script>
+const androidUrl = "https://github.com/ShigeakiRacing/okini-oshi-download/releases/download/v1.0.9/okini-oshi-android.apk";
+const iosUrl = "https://apps.apple.com/jp/app/id6818945709";
+
+function setup(prefix,url){
+ document.getElementById(prefix+"-button").href=url;
+ document.getElementById(prefix+"-qr-link").href=url;
+ document.getElementById(prefix+"-qr").src=
+ "https://api.qrserver.com/v1/create-qr-code/?size=320x320&data="
+ +encodeURIComponent(url);
+}
+setup("android",androidUrl);
+setup("ios",iosUrl);
+</script>
+
+</body>
+</html>
