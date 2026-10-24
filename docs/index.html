@@ -143,12 +143,41 @@ footer{
   .install-help-grid { grid-template-columns: 1fr; }
   .install-help { padding: 18px; }
 }
+
+/* Official application icon */
+.logo {
+  overflow: hidden;
+}
+.logo img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 20px;
+}
+
+/* Android installation guide link */
+.info a {
+  color: #7656a4;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  font-weight: 600;
+}
+
+#android-install-help {
+  scroll-margin-top: 20px;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
 </style>
 </head>
 <body>
 
 <header>
-<div class="logo" aria-hidden="true">★</div>
+<div class="logo"><img src="assets/app-icon-official-v1.png" alt="お気にと推しの予定 アプリアイコン"></div>
 <h1>お気にと推しの予定</h1>
 <p class="lead">お気に入りの出演者と推しの予定を<br>
 見やすく整理できるスケジュールアプリ</p>
@@ -163,13 +192,13 @@ footer{
 <a id="android-qr-link" href="#" aria-label="Android APKをダウンロード">
 <span class="qr-holder">
 <img id="android-qr" class="qr" alt="Android APKダウンロード用QRコード">
-<img class="qr-logo" src="assets/app-icon.png" alt="" aria-hidden="true">
+<img class="qr-logo" src="assets/app-icon-official-v1.png" alt="" aria-hidden="true">
 </span>
 </a>
 <a class="btn" id="android-button" href="#">APKをダウンロード</a>
 <p class="info">
 Google Play以外からの配布です。<br>
-インストール時に提供元の許可が必要な場合があります。
+<a href="#android-install-help">インストール時に提供元の許可が必要な場合があります。</a>
 </p>
 </article>
 
@@ -179,7 +208,7 @@ Google Play以外からの配布です。<br>
 <a id="ios-qr-link" href="#" aria-label="App Storeを開く">
 <span class="qr-holder">
 <img id="ios-qr" class="qr" alt="App Store用QRコード">
-<img class="qr-logo" src="assets/app-icon.png" alt="" aria-hidden="true">
+<img class="qr-logo" src="assets/app-icon-official-v1.png" alt="" aria-hidden="true">
 </span>
 </a>
 <a class="btn" id="ios-button" href="#">App Storeで入手</a>
