@@ -6,6 +6,29 @@
 <meta name="theme-color" content="#7856a5">
 <title>お気にと推しの予定 | ダウンロード</title>
 <style>
+.qr-holder {
+  display: block;
+  position: relative;
+  width: 180px;
+  height: 180px;
+  margin: 22px auto;
+}
+.qr-holder .qr {
+  margin: 0;
+}
+.qr-logo {
+  position: absolute;
+  width: 40px;
+  height: 40px;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  background: white;
+  padding: 3px;
+  border-radius: 8px;
+  object-fit: contain;
+  box-shadow: 0 1px 5px rgba(0,0,0,.12);
+}
 *{box-sizing:border-box}
 body{
  margin:0;
@@ -100,7 +123,10 @@ footer{
 <h2>Android版</h2>
 <div class="version">v1.0.9</div>
 <a id="android-qr-link" href="#" aria-label="Android APKをダウンロード">
+<span class="qr-holder">
 <img id="android-qr" class="qr" alt="Android APKダウンロード用QRコード">
+<img class="qr-logo" src="assets/app-icon.png" alt="" aria-hidden="true">
+</span>
 </a>
 <a class="btn" id="android-button" href="#">APKをダウンロード</a>
 <p class="info">
@@ -113,7 +139,10 @@ Google Play以外からの配布です。<br>
 <h2>iPhone版</h2>
 <div class="version">App Store公開版</div>
 <a id="ios-qr-link" href="#" aria-label="App Storeを開く">
+<span class="qr-holder">
 <img id="ios-qr" class="qr" alt="App Store用QRコード">
+<img class="qr-logo" src="assets/app-icon.png" alt="" aria-hidden="true">
+</span>
 </a>
 <a class="btn" id="ios-button" href="#">App Storeで入手</a>
 <p class="info">
@@ -143,7 +172,7 @@ function setup(prefix,url){
  document.getElementById(prefix+"-button").href=url;
  document.getElementById(prefix+"-qr-link").href=url;
  document.getElementById(prefix+"-qr").src=
- "https://api.qrserver.com/v1/create-qr-code/?size=320x320&data="
+ "https://api.qrserver.com/v1/create-qr-code/?size=320x320&ecc=H&data="
  +encodeURIComponent(url);
 }
 setup("android",androidUrl);
