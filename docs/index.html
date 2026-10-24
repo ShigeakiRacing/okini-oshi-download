@@ -105,6 +105,44 @@ footer{
  .cards{grid-template-columns:1fr}
  h1{font-size:24px}
 }
+.install-help {
+  margin: 28px 0;
+  background: white;
+  border: 1px solid #e4dced;
+  border-radius: 18px;
+  padding: 24px;
+  line-height: 1.85;
+}
+.install-help h2 { margin: 0 0 14px; font-size: 21px; }
+.install-help h3 { font-size: 16px; margin-bottom: 6px; }
+.install-help p, .install-help li { font-size: 14px; }
+.install-help ol { padding-left: 24px; }
+.install-help-grid {
+  display: grid;
+  grid-template-columns: minmax(0,240px) minmax(0,1fr);
+  gap: 24px;
+  align-items: start;
+}
+.install-help img {
+  display: block;
+  width: 100%;
+  max-width: 240px;
+  height: auto;
+  border: 1px solid #e4dced;
+  border-radius: 12px;
+}
+.install-help .hash {
+  overflow-wrap: anywhere;
+  font-family: monospace;
+  background: #f4f0f8;
+  border-radius: 8px;
+  padding: 12px;
+  font-size: 12px;
+}
+@media (max-width:640px) {
+  .install-help-grid { grid-template-columns: 1fr; }
+  .install-help { padding: 18px; }
+}
 </style>
 </head>
 <body>
@@ -160,6 +198,86 @@ App Storeで公開されているバージョンを<br>
 Android版のAPKは、このページで案内するGitHub Releasesから配布します。
 </section>
 
+<section id="android-install-help" class="install-help">
+<h2>Android版のインストールと警告について</h2>
+
+<div class="install-help-grid">
+  <div>
+    <a href="assets/play-protect-warning.jpg"
+       target="_blank" rel="noopener noreferrer">
+      <img src="assets/play-protect-warning.jpg"
+           alt="Google Play プロテクトの警告画面"
+           loading="lazy">
+    </a>
+    <p>実際の警告画面です。タップすると拡大できます。</p>
+  </div>
+
+  <div>
+    <h3>この警告は何ですか？</h3>
+    <p>
+      Android版はGoogle Playではなく、GitHub Releasesから
+      APKファイルを直接配布しています。
+      インストール時にGoogle Play プロテクトによる
+      確認や警告が表示される場合があります。
+    </p>
+    <p>
+      表示例：「デバイスを保護するため、アプリをブロックしました」
+    </p>
+    <p>
+      今回の例では、このデベロッパーのアプリが
+      Play プロテクトでまだスキャンされていない旨が表示されています。
+      警告だけで危険とは断定できませんが、
+      安全が保証されたことにもなりません。
+    </p>
+  </div>
+</div>
+
+<h3>インストール前の確認と対処方法</h3>
+<ol>
+  <li>
+    このページのAndroid用ボタンから、GitHub Releasesの
+    正規APKをダウンロードしてください。
+  </li>
+  <li>
+    Google Play プロテクトがスキャンを提案した場合は、
+    スキャン結果を確認してください。
+  </li>
+  <li>
+    警告が表示された場合は、内容を確認し、
+    配布元が正しいことを確かめてください。
+    不明点がある場合は「OK」を押してインストールを中止してください。
+  </li>
+  <li>
+    ファイルの整合性を確認したうえで、警告の意味と
+    リスクを理解できる場合に限り、
+    端末に表示される選択肢に従ってご自身で判断してください。
+    インストールの続行をおすすめするものではありません。
+  </li>
+</ol>
+
+<h3>Android v1.0.9 APKのSHA-256</h3>
+<p class="hash">B028100745AB9DD6B0A16FC3028C8EEE14D2575AC768BAC132B198B3403A4735</p>
+
+<p>
+  SHA-256はダウンロードしたファイルが配布元のファイルと
+  一致するか確認するための値です。
+  この一致だけでアプリの安全性を保証するものではありません。
+</p>
+
+<p>
+  <strong>重要：</strong>
+  Google Play プロテクト自体を無効にする必要はありません。
+  危険なアプリとして検出された場合や安全性を判断できない場合は、
+  インストールしないでください。
+</p>
+
+<p>
+  <a href="https://support.google.com/googleplay/answer/2812853?hl=ja"
+     target="_blank" rel="noopener noreferrer">
+    Google Play プロテクトの公式説明
+  </a>
+</p>
+</section>
 </main>
 
 <footer>お気にと推しの予定</footer>
